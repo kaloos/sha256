@@ -2,7 +2,7 @@ class TBPadding
     attr_reader     :str_in
     attr_reader     :bytes_out
     attr_reader     :num_blocks
-    
+
     def initialize (str_in)
         if str_in != nil then
             @str_in = str_in
@@ -16,7 +16,7 @@ class TBPadding
         @bytes_out.join[pos_start..7+pos_start]
     end
     def compute()
-        if str_in == nil then
+        if @str_in == nil then
             return nil
         end
         if @bytes_out != [] then

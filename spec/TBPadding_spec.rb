@@ -4,7 +4,7 @@ RSpec.describe 'A padded address' do
     before :each do
         @str_original = "abc"
         @original_bytes_length = (@str_original.bytes.length).to_s(16).to_i(16)
-        @tb_pad = TBPadding.new("abc")
+        @tb_pad = TBPadding.new(@str_original)
         @bytes_out = @tb_pad.compute()
         @str_padded = @bytes_out.join
         @num_blocks = @tb_pad.num_blocks
@@ -59,4 +59,3 @@ end
         end
       end
     end
-
