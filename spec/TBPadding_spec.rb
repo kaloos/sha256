@@ -10,7 +10,6 @@ RSpec.describe 'A padded address' do
         @num_blocks = @tb_pad.num_blocks
     end
     it 'should have appended a byte with value 1' do
-        #str = @str_padded[2*@str_original.length..2*@str_original.length+1]
         str = @str_padded[2*@original_bytes_length..2*@original_bytes_length+1]
         expect(str).to eq("80")
     end

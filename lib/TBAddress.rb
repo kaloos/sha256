@@ -23,7 +23,7 @@ class TBAddress
     attr_reader     :int_hash_value
     attr_reader     :tb_pad
     attr_reader     :arr_w
-    
+
     def initialize(input_string)
         if input_string != nil then
             @int_hash_value = []
@@ -80,8 +80,8 @@ class TBAddress
     def sum32(a,b)
         (a+b)%(2**32)
     end
-    
-    def hash_compute()
+
+    def hash()
         if @int_hash_value==[] then
             for i in 0..7
                 @int_hash_value << ARR_H[i].to_i(16)
@@ -131,13 +131,11 @@ class TBAddress
         map_hashed << (@int_hash_value[0]).to_s(16)
         map_hashed << (@int_hash_value[1]).to_s(16)
         map_hashed << (@int_hash_value[2]).to_s(16)
-        map_hashed << (@int_hash_value[3]).to_s(16) 
-        map_hashed << (@int_hash_value[4]).to_s(16) 
-        map_hashed << (@int_hash_value[5]).to_s(16) 
-        map_hashed << (@int_hash_value[6]).to_s(16) 
-        map_hashed << (@int_hash_value[7]).to_s(16) 
+        map_hashed << (@int_hash_value[3]).to_s(16)
+        map_hashed << (@int_hash_value[4]).to_s(16)
+        map_hashed << (@int_hash_value[5]).to_s(16)
+        map_hashed << (@int_hash_value[6]).to_s(16)
+        map_hashed << (@int_hash_value[7]).to_s(16)
         map_hashed.map { |e| e.to_s.rjust(8,'0')[-8..-1]}.join
     end
 end
-
-
